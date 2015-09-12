@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<!--<properties>
+	<comment>MySql Parameters</comment>
+		<entry key="Username">root</entry>
+		<entry key="Password">762501</entry>
+		<entry key="JDBCDriver">com.mysql.jdbc.Driver</entry>
+		<entry key="DBAdress">localhost</entry>
+		<entry key="DBName">apollodb</entry>
+		<entry key="PortNum">3306</entry>
+</properties>-->
+
+ <properties>
+	<comment>Parametros do PostgreSQL</comment>
+	<entry key="endBanco">localhost</entry>
+	<entry key="senha">7625</entry>
+	<entry key="driverJDBC">org.postgresql.Driver</entry>
+	<entry key="nomeDatabase"></entry>
+	<entry key="nroPorta">5432</entry>
+	<entry key="nomeUsuario">postgres</entry>
+</properties> 
