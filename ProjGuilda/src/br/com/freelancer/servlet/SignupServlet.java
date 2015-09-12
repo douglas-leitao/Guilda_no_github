@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.json.JSONObject;
-//import br.operacoes.SignupOp;
+import br.com.freelancer.operation.SignupOp;
 
 @WebServlet("/SignupServlet")
 public class SignupServlet extends HttpServlet {
@@ -35,9 +35,9 @@ public class SignupServlet extends HttpServlet {
 		String msgRecebida = recebido.toString();
 		JSONObject jObj = new JSONObject( msgRecebida );
 		
-		//SignupOp cadastro = new SignupOp();
+		SignupOp cadastro = new SignupOp();
 		try {
-			//this.Status = cadastro.CadastrarUsuario(jObj);
+			this.Status = cadastro.CadastrarUsuario(jObj);
 		} catch (NoSuchAlgorithmException e1) {
 			this.Status = 404;
 		}
