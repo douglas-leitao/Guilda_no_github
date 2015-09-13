@@ -28,31 +28,41 @@ public class SignupOp {
 		//get JSON properties
 		String name = jObj.get("name").toString();
 		String email = jObj.get("email").toString();
-		String nome_usuario = jObj.get("username").toString();
 		String image = jObj.get("image").toString();
-		String password = jObj.get("password").toString();
+		String password_a = jObj.get("password_a").toString();
+		String password_b = jObj.get("password_b").toString();
 		
 		//validate informations
 		//
 		
-		MessageDigest algorithm = MessageDigest.getInstance("SHA-256"); 
-		byte messageDigest[] = algorithm.digest(password.getBytes("UTF-8"));
-		StringBuilder hexString = new StringBuilder(); 
+		MessageDigest algorithm_a = MessageDigest.getInstance("SHA-256"); 
+		byte messageDigest_a[] = algorithm_a.digest(password_a.getBytes("UTF-8"));
+		StringBuilder hexString_a = new StringBuilder(); 
 		
-		for (byte b : messageDigest) { 
-			hexString.append(String.format("%02X", 0xFF & b)); 
+		for (byte b : messageDigest_a) { 
+			hexString_a.append(String.format("%02X", 0xFF & b)); 
 		} 
-		String passwordCript = hexString.toString();
+		String passwordCript_a = hexString_a.toString();
+		
+		MessageDigest algorithm_b = MessageDigest.getInstance("SHA-256"); 
+		byte messageDigest_b[] = algorithm_b.digest(password_b.getBytes("UTF-8"));
+		StringBuilder hexString_b = new StringBuilder(); 
+		
+		for (byte c : messageDigest_b) { 
+			hexString_b.append(String.format("%02X", 0xFF & c)); 
+		} 
+		String passwordCript_b = hexString_b.toString();
 		
 	
 		
-		user.setNome_usuario(nome_usuario);
-		user.setNome(name);
-		user.setSenha(passwordCript);
-		user.setEmail(email);
-		user.setImagem(image);
-		user.setDistancia_Maxima(1000);
+		user.setNome_usuario(name);
+		user.setEmail_usuario(email);
+		user.setSenha_a(passwordCript_a);
+		user.setSenha_b(passwordCript_b);
 		
+		//user.setImagem(image);
+
+
 		try {
 			
 			Persistor persistor = new Persistor(conexao, user);

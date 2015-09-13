@@ -3,10 +3,11 @@ window.addEventListener( "load", function(){
 
         var name;
         var email;
-        var username;
         var image;
-        var password;
-        var confirmPassword;
+        var password_a;
+        var confirmPassword_a;
+        var password_b;
+        var confirmPassword_b;
         var contractTerms;
                 
         var jsonToSend;
@@ -152,20 +153,20 @@ window.addEventListener( "load", function(){
                 
                 }
                 
-                if( username == "" ){
                 
-                        errorMessage = "O campo 'Nome de usuário' está vazio.";
+                if( password_a == "" ){
+                
+                        errorMessage = "O campo 'Senha A' está vazio.";
                         error        = true;
                 
                 }
                 
-                if( password == "" ){
-                
-                        errorMessage = "O campo 'Senha' está vazio.";
-                        error        = true;
-                
-                }
-                
+                if( password_b == "" ){
+                    
+                    errorMessage = "O campo 'Senha B' está vazio.";
+                    error        = true;
+            
+            }
                 if( error ){
                 
                         alert( errorMessage );
@@ -176,9 +177,9 @@ window.addEventListener( "load", function(){
                 jsonToSend = "{" +
                                      '"name": '     + '"' + name     + '"' + "," +
                                      '"email": '    + '"' + email    + '"' + "," +
-                                     '"username": ' + '"' + username + '"' + "," +
                                      '"image": '    + '"' + image    + '"' + "," +
-                                     '"password": ' + '"' + password + '"' + "," +
+                                     '"password-a": ' + '"' + password_a + '"' + "," +
+                                     '"password-b": ' + '"' + password_b + '"' + "," +
                              "}";
                              
                 advancedFunction.sendJson( destiny, jsonToSend, function( jsonObject ){
