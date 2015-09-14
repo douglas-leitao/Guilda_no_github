@@ -1,6 +1,6 @@
 package br.com.freelancer.model;
 
-import java.util.Date;
+
 
 import br.com.freelancer.util.AlternateKey;
 import br.com.freelancer.util.AutoIncrement;

@@ -22,7 +22,7 @@ public class Finder <T extends Object> {
 	private boolean human = false;
 	ArrayList<T> result = new ArrayList<T>();
 	
-	public Finder( ConexaoMySql cnx, Class<T> refTabela ) throws ConnectionDBException {
+	public Finder( Conexao cnx, Class<T> refTabela ) throws ConnectionDBException {
 		this.refTabela = refTabela;
 		this.cnx = cnx;
 		
@@ -363,7 +363,7 @@ public T count( Object count, String where ) throws ConnectionDBException {
 				cmd.append( "\n    " + offset );
 			}
 
-			ConexaoMySql cnx = ConnectionsPool.getInstance().getConnection();
+			Conexao cnx = ConnectionsPool.getInstance().getConnection();
 			
 			try {
 				

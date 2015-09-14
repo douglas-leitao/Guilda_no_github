@@ -2,8 +2,8 @@ package br.com.freelancer.databaseConnection;
 
 import java.util.ArrayList;
 
-import br.databaseConnection.ConexaoMySql;
-import br.databaseConnection.ConnectionDBException;
+import br.com.freelancer.databaseConnection.Conexao;
+import br.com.freelancer.databaseConnection.ConnectionDBException;
 
 public class ConnectionsPool {
 	private static ConnectionsPool mySelf;

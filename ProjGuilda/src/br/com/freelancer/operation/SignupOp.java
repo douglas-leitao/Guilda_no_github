@@ -28,7 +28,7 @@ public class SignupOp {
 		//get JSON properties
 		String name = jObj.get("name").toString();
 		String email = jObj.get("email").toString();
-		String image = jObj.get("image").toString();
+		//String image = jObj.get("image").toString();
 		String password_a = jObj.get("password_a").toString();
 		String password_b = jObj.get("password_b").toString();
 		
