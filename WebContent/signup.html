@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+        <head>
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width">
+                <link href="css/style.css" rel="stylesheet">
+                <link href="css/signup.css" rel="stylesheet">
+                <script src="cordova.js"></script>
+                <script src="cordova_plugins.js"></script>
+                <script src="js/imageapi.js"></script>
+                <script src="js/utils.js"></script>
+                <script src="js/style.js"></script>
+                <script src="js/signup.js"></script>
+        </head>
+        <body>
+                <header>
+                        <h2><a href="signin.html">Voltar ao login</a></h2>
+                </header>
+                <h1>Criar conta</h1>
+                <form>
+                        <ul class="signup-form">
+                                <li>
+                                        <label for="name">Nome completo</label>
+                                        <input type="text" id="name" name="name">
+                                </li>
+                                
+                                <li>
+                                        <label for="email">Email</label>
+                                        <input type="text" id="email" name="email">
+                                </li>
+                                
+                                
+                                <li id="file-section">
+                                        <input type="button" id="image" name="image" value="Selecionar imagem...">
+                                </li>
+                                
+                                <li>
+                                        <label for="password-a">Senha A</label>
+                                        <input type="password" id="password-a" name="password-a">
+                                </li>
+                                
+                                <li>
+                                        <label for="confirm-password-a">Confirmar senha A</label>
+                                        <input type="password" id="confirm-password-a" name="confirm-password-a">
+                                </li>
+                                
+                                <li>
+                                        <label for="password-b">Senha B</label>
+                                        <input type="password" id="password-b" name="password-b">
+                                </li>
+                                
+                                <li>
+                                        <label for="confirm-password-b">Confirmar senha B</label>
+                                        <input type="password" id="confirm-password-b" name="confirm-password-b">
+                                </li>
+                                
+                                <li id="contract-terms-section">
+                                        <input type="checkbox" id="contract-terms" name="contract-terms">
+                                        <label for="contract-terms">
+                                                Eu li e aceito os <a href="termoscontrato.html">Termos de contrato</a>
+                                        </label>
+                                </li>
+                        </ul>
+                        <input type="button" value="Criar conta" id="submit">
+                </form>
+        </body>
+</html>
