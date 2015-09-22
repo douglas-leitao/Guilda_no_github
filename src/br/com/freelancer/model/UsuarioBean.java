@@ -18,14 +18,13 @@ public class UsuarioBean {
 	@AutoIncrement
 	@PrimaryKey
 	private Integer id_usuario;
-	@Login
-	@AlternateKey
+	
 	private String nome_usuario;
+	@Login
 	@AlternateKey
 	private String email_usuario;
 	@Login
 	private String senha_a;
-	@Login
 	private String senha_b;
 	@Login
 	@Default
