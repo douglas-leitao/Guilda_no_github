@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+        <head>
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width">
+                <link href="css/style.css" rel="stylesheet">
+                <link href="css/newjob.css" rel="stylesheet">
+                
+				<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
+				<script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+				<script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
+				
+                <script src="js/imageapi.js"></script>
+                <script src="js/utils.js"></script>
+                <script src="js/style.js"></script>
+                <script src="js/newjob.js"></script>
+        </head>
+        <body>
+                <header>
+                        <h1>Criar Job</h1>
+                </header>
+                
+                <form>
+                        <ul class="newjob-form">
+                                <li>
+                                        <label for="desc-tarefa">Descrição</label>
+                                        <input type="text" id="desc-tarefa" name="desc-tarefa">
+                                </li>
+                                
+                                <li>
+                                        <label for="requisitos">Requisitos</label>
+                                        
+                                </li>
+                                <li>
+                                		<textarea rows="4" cols="50" id="requisitos" name="requisitos"> </textarea>
+                                </li>
+                                
+                                <li>
+                                		<label for="data">Data de Entrega</label>
+                                		<input type="text" id="data-entrega" name="data-entrega" />
+		                                 <script>
+												$(function() {
+												    $( "#data-entrega" ).datepicker({
+												    	dateFormat: 'dd/mm/yy',
+												        dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado','Domingo'],
+												        dayNamesMin: ['D','S','T','Q','Q','S','S','D'],
+												        dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],
+												        monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+												        monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
+												        changeMonth: true,
+												        changeYear: true,
+												        showOn: "button",
+												        buttonImage: "img/calendario.png",
+												        buttonImageOnly: true
+												    });
+												});
+										</script>
+
+                                </li>
+                                
+                                <li>
+                                        <label for="extimativa">Extimativa Horas</label>
+                                        <input type="text" id="extimativa" name="extimativa">
+                                </li>
+                                
+                                <li>
+                                        <label for="preco">Preço</label>
+                                        <input type="text" id="preco" name="preco">
+                                </li>
+                                
+                                
+                                
+                        </ul>
+                        <input type="button" value="Criar Job" id="submit">
+                </form>
+        </body>
+</html>
