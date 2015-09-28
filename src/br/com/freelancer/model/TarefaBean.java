@@ -2,15 +2,15 @@ package br.com.freelancer.model;
 
 
 
-import br.com.freelancer.util.AlternateKey;
+
+
+import java.sql.Date;
+
 import br.com.freelancer.util.AutoIncrement;
-import br.com.freelancer.util.Boolean;
-import br.com.freelancer.util.Default;
+import br.com.freelancer.util.InsertOnly;
 import br.com.freelancer.util.PrimaryKey;
 import br.com.freelancer.util.Table;
-import br.com.freelancer.util.Login;
 import br.com.freelancer.util.View;
-import sun.util.calendar.LocalGregorianCalendar.Date;
 
 
 @Table(tableName="TAREFA")
@@ -32,11 +32,12 @@ public class TarefaBean {
 
 	private Double preco;
 	
+	@InsertOnly
 	private Date data_cadastro;
 	
 	private Date data_entrega;
 	
-	private Integer extimativa_horas;
+	private Integer extimativa_hora;
 
 	public Integer getId_tarefa() {
 		return id_tarefa;
@@ -110,12 +111,12 @@ public class TarefaBean {
 		this.data_entrega = data_entrega;
 	}
 
-	public Integer getExtimativa_horas() {
-		return extimativa_horas;
+	public Integer getExtimativa_hora() {
+		return extimativa_hora;
 	}
 
-	public void setExtimativa_horas(Integer extimativa_horas) {
-		this.extimativa_horas = extimativa_horas;
+	public void setExtimativa_hora(Integer extimativa_horas) {
+		this.extimativa_hora = extimativa_horas;
 	}
 	
 	

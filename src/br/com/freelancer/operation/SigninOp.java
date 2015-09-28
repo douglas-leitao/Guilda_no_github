@@ -3,7 +3,7 @@ package br.com.freelancer.operation;
 import org.json.JSONObject;
 
 import br.com.freelancer.databaseConnection.Conexao;
-import br.com.freelancer.databaseConnection.ConnectionDBException;
+import br.com.freelancer.util.ConnectionDBException;
 import br.com.freelancer.databaseConnection.ConnectionsPool;
 import br.com.freelancer.model.UsuarioBean;
 import br.com.freelancer.util.Finder;

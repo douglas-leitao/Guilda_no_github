@@ -7,6 +7,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+import br.com.freelancer.util.ConnectionDBException;
+
 public class Conexao {
 	private String status = "Nao conectou... ";
 	private boolean busy;

@@ -157,12 +157,12 @@ public class Persistor {
 		cmd.append( " SET " );
 
 		for(Field fld: atributos){
-			if( !fld.getName().equals( "serialVersionUID" ) ) {
+			if( !fld.getName().equals( "serialVersionUID" ) && !fld.isAnnotationPresent(InsertOnly.class) ) {
 				cmd.append("\n    " );
 				cmd.append(fld.getName());
 				cmd.append(" = ?, " );
 				
-				if( fld.isAnnotationPresent(PrimaryKey.class)) {
+				if( fld.isAnnotationPresent(PrimaryKey.class) ) {
 					where.append( fld.getName() );
 					where.append( " = ? ");
 					where.append( "\n    and ");

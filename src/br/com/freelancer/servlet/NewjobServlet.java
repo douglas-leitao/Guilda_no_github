@@ -10,44 +10,67 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.json.JSONObject;
+
+import br.com.freelancer.model.UsuarioBean;
 import br.com.freelancer.operation.NewjobOp;
 
 @WebServlet("/NewjobServlet")
 public class NewjobServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private Integer Status;
+	private Integer status;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		StringBuilder recebido = new StringBuilder( 500 );
-		ServletInputStream sir = request.getInputStream();
+		HttpSession sessao = request.getSession(true);
+		UsuarioBean logado = (UsuarioBean)sessao.getAttribute("resLogado");
 		
-		int ch;
-		while( ( ch = sir.read() ) >= 0 ) {
-			recebido.append( (char) ch );
+		if(logado == null){
+			System.out.println("SESSAO ERRO");
+			this.status = 403;
+			System.out.println("Status: " + status);
+			JSONObject result = new JSONObject();
+			result.put("status", this.status);
+			
+			response.setContentType("application/json");      
+			PrintWriter out = response.getWriter();
+			out.print(result);
+			out.flush();	
+		}else{
+			System.out.println("SESSAO CRIADA!");
+		
+		
+			StringBuilder recebido = new StringBuilder( 500 );
+			ServletInputStream sir = request.getInputStream();
+			
+			int ch;
+			while( ( ch = sir.read() ) >= 0 ) {
+				recebido.append( (char) ch );
+			}
+		
+			String msgRecebida = recebido.toString();
+			JSONObject jObj = new JSONObject( msgRecebida );
+			
+			NewjobOp cadastro = new NewjobOp();
+			try {
+				this.status = cadastro.CadastrarTarefa(jObj, logado.getId_usuario());
+			} catch (NoSuchAlgorithmException e1) {
+				e1.printStackTrace();
+				this.status = 404;
+			}
+			System.out.println("Status: " + status);
+			JSONObject result = new JSONObject();
+			result.put("status", this.status);
+			
+			response.setContentType("application/json");      
+			PrintWriter out = response.getWriter();
+			out.print(result);
+			out.flush();
 		}
-
-		String msgRecebida = recebido.toString();
-		JSONObject jObj = new JSONObject( msgRecebida );
-		
-		NewjobOp cadastro = new NewjobOp();
-		try {
-			this.Status = cadastro.CadastrarTarefa(jObj);
-		} catch (NoSuchAlgorithmException e1) {
-			this.Status = 404;
-		}
-
-		JSONObject result = new JSONObject();
-		result.put("status", this.Status);
-		
-		response.setContentType("application/json");      
-		PrintWriter out = response.getWriter();
-		out.print(result);
-		out.flush();
 	}
 }

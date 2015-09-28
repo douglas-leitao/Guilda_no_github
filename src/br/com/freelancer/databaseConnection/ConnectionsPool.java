@@ -3,7 +3,7 @@ package br.com.freelancer.databaseConnection;
 import java.util.ArrayList;
 
 import br.com.freelancer.databaseConnection.Conexao;
-import br.com.freelancer.databaseConnection.ConnectionDBException;
+import br.com.freelancer.util.ConnectionDBException;
 
 public class ConnectionsPool {
 	private static ConnectionsPool mySelf;

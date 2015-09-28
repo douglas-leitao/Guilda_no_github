@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.freelancer.databaseConnection.Conexao;
-import br.com.freelancer.databaseConnection.ConnectionDBException;
+import br.com.freelancer.util.ConnectionDBException;
 import br.com.freelancer.databaseConnection.ConnectionsPool;
 
 public class Finder <T extends Object> {

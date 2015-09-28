@@ -6,6 +6,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+import br.com.freelancer.util.ConnectionDBException;
+
 public class DBParameters {
 	private static DBParameters mySelf;
 	
