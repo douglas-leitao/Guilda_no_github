@@ -1,44 +1,36 @@
-h1{
-
-        text-align: center;
-
+h1 {
+	text-align: center;
 }
 
-header{
-
-        padding: 6px;
-
+header {
+	padding: 6px;
+}
+.newjob-form{
+	margin-top: 100px;
 }
 
-.newjob-form li{
 
-        margin: 0 0 12px 0;
-
+.newjob-form li {
+	margin: 0 0 12px 0;
 }
 
-.newjob-form input[type="text"], .newjob-form input[type="password"], textarea{
-
-        width: 90%;
-        /* max-width: 300px; */
-        margin: 0 5% 0 5%;
-
+.newjob-form input[type="text"], .newjob-form input[type="password"], .newjob-form textarea {
+	width: 90%;
+	/* max-width: 300px; */
+	margin: 0 5% 0 5%;
 }
 
-#data-entrega{
-		width: 85%;
-		margin: 0 2% 0 5%;
+#data-entrega {
+	width: 90%;
+	margin: 0 5% 0 5%;
 }
 
-#image{
-
-        width: 50%;
-        margin: 0 45% 0 0;
-
+#image {
+	width: 50%;
+	margin: 0 45% 0 0;
 }
 
-#submit{
-
-        width: 70%;
-        margin: 0 15% 0 15%;
-
+#submit {
+	width: 70%;
+	margin: 0 15% 0 15%;
 }

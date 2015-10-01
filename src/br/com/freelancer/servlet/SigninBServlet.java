@@ -14,7 +14,6 @@ import javax.servlet.http.HttpSession;
 
 import org.json.JSONObject;
 
-import br.com.freelancer.databaseConnection.ConnectionDBException;
 import br.com.freelancer.model.UsuarioBean;
 import br.com.freelancer.operation.SigninOp;
 

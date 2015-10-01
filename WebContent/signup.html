@@ -1,65 +1,99 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-        <head>
-                <meta charset="utf-8">
-                <meta name="viewport" content="width=device-width">
-                <link href="css/style.css" rel="stylesheet">
-                <link href="css/signup.css" rel="stylesheet">
-                <script src="js/imageapi.js"></script>
-                <script src="js/utils.js"></script>
-                <script src="js/style.js"></script>
-                <script src="js/signup.js"></script>
-        </head>
-        <body>
-                <header>
-                        <h2><a href="signin.html">Voltar ao login</a></h2>
-                </header>
-                <h1>Criar conta</h1>
-                <form>
-                        <ul class="signup-form">
-                                <li>
-                                        <label for="name">Nome completo</label>
-                                        <input type="text" id="name" name="name">
-                                </li>
-                                
-                                <li>
-                                        <label for="email">Email</label>
-                                        <input type="text" id="email" name="email">
-                                </li>
-                                
-                                
-                                <li id="file-section">
-                                        <input type="button" id="image" name="image" value="Selecionar imagem...">
-                                </li>
-                                
-                                <li>
-                                        <label for="password-a">Senha A</label>
-                                        <input type="password" id="password-a" name="password-a">
-                                </li>
-                                
-                                <li>
-                                        <label for="confirm-password-a">Confirmar senha A</label>
-                                        <input type="password" id="confirm-password-a" name="confirm-password-a">
-                                </li>
-                                
-                                <li>
-                                        <label for="password-b">Senha B</label>
-                                        <input type="password" id="password-b" name="password-b">
-                                </li>
-                                
-                                <li>
-                                        <label for="confirm-password-b">Confirmar senha B</label>
-                                        <input type="password" id="confirm-password-b" name="confirm-password-b">
-                                </li>
-                                
-                                <li id="contract-terms-section">
-                                        <input type="checkbox" id="contract-terms" name="contract-terms">
-                                        <label for="contract-terms">
-                                                Eu li e aceito os <a href="termoscontrato.html">Termos de contrato</a>
-                                        </label>
-                                </li>
-                        </ul>
-                        <input type="button" value="Criar conta" id="submit">
-                </form>
-        </body>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/signup.css" rel="stylesheet">
+<script src="js/imageapi.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/style.js"></script>
+<script src="js/signup.js"></script>
+<meta name="generator" content="Bootply" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+<link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-collapse">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html">Guilda</a>
+			</div>
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="index.html">Home</a></li>
+					<li><a href="#about">About</a></li>
+
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown">Job <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="newjob.html">New Job</a></li>
+							<li><a href="mural.html">Mural Job</a></li>
+						</ul></li>
+
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="signup.html">Signup</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="signin.html">Signin</a></li>
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+	</div>
+
+	<form>
+		<ul class="signup-form">
+			<li><label for="name">Nome completo</label> <input type="text"
+				id="name" name="name"></li>
+
+			<li><label for="email">Email</label> <input type="text"
+				id="email" name="email"></li>
+
+
+			<li id="file-section"><input type="button" id="image"
+				name="image" value="Selecionar imagem..."></li>
+
+			<li><label for="password-a">Senha A</label> <input
+				type="password" id="password-a" name="password-a"></li>
+
+			<li><label for="confirm-password-a">Confirmar senha A</label> <input
+				type="password" id="confirm-password-a" name="confirm-password-a">
+			</li>
+
+			<li><label for="password-b">Senha B</label> <input
+				type="password" id="password-b" name="password-b"></li>
+
+			<li><label for="confirm-password-b">Confirmar senha B</label> <input
+				type="password" id="confirm-password-b" name="confirm-password-b">
+			</li>
+
+			<li id="contract-terms-section"><input type="checkbox"
+				id="contract-terms" name="contract-terms"> <label
+				for="contract-terms"> Eu li e aceito os <a
+					href="termoscontrato.html">Termos de contrato</a>
+			</label></li>
+		</ul>
+		<input type="button" value="Criar conta" id="submit">
+	</form>
+	
+	
+	<!-- jQuery -->
+	<script src="js/jquery.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="js/bootstrap.min.js"></script>
+</body>
 </html>
