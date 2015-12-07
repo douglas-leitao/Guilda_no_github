@@ -37,7 +37,7 @@ public class TarefaBean {
 	
 	private Date data_entrega;
 	
-	private Integer extimativa_hora;
+	private Integer estimativa_hora;
 
 	public Integer getId_tarefa() {
 		return id_tarefa;
@@ -111,12 +111,12 @@ public class TarefaBean {
 		this.data_entrega = data_entrega;
 	}
 
-	public Integer getExtimativa_hora() {
-		return extimativa_hora;
+	public Integer getEstimativa_hora() {
+		return estimativa_hora;
 	}
 
-	public void setExtimativa_hora(Integer extimativa_horas) {
-		this.extimativa_hora = extimativa_horas;
+	public void setEstimativa_hora(Integer estimativa_horas) {
+		this.estimativa_hora = estimativa_horas;
 	}
 	
 	
