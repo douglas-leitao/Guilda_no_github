@@ -6,8 +6,8 @@ window.addEventListener( "load", function(){
         var image;
         var passwordA;
         var confirmPasswordA;
-        var passwordB;
-        var confirmPasswordB;
+//        var passwordB;
+//        var confirmPasswordB;
         var contractTerms;
                 
         var jsonToSend;
@@ -62,25 +62,25 @@ window.addEventListener( "load", function(){
         
         };
         
-        document.querySelector( "#password-b" ).onblur = function(){
-            
-            advancedFunction.verifyField( "#password-b", "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%&*?()[]{}<>", function(){
-            
-                alert( "Você inseriu caracteres inválidos, insira uma nova senha." );
-            
-            } );
-    
-        };
-    
-	    document.querySelector( "#confirm-password-b" ).onblur = function(){
-	    
-            advancedFunction.compareFields( "#password-b", "#confirm-password-b", function(){
-            
-                alert( "As senhas 'B' são diferentes." );
-            
-            } );
-	    
-	    };
+//        document.querySelector( "#password-b" ).onblur = function(){
+//            
+//            advancedFunction.verifyField( "#password-b", "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%&*?()[]{}<>", function(){
+//            
+//                alert( "Você inseriu caracteres inválidos, insira uma nova senha." );
+//            
+//            } );
+//    
+//        };
+//    
+//	    document.querySelector( "#confirm-password-b" ).onblur = function(){
+//	    
+//            advancedFunction.compareFields( "#password-b", "#confirm-password-b", function(){
+//            
+//                alert( "As senhas 'B' são diferentes." );
+//            
+//            } );
+//	    
+//	    };
 
         document.querySelector( "#image" ).onclick = function(){
                 
@@ -98,8 +98,8 @@ window.addEventListener( "load", function(){
             email           	= document.querySelector( "#email" ).value;
             passwordA        	= document.querySelector( "#password-a" ).value;
             confirmPasswordA 	= document.querySelector( "#confirm-password-a" ).value;
-            passwordB        	= document.querySelector( "#password-b" ).value;
-            confirmPasswordB 	= document.querySelector( "#confirm-password-b" ).value;
+            //passwordB        	= document.querySelector( "#password-b" ).value;
+            //confirmPasswordB 	= document.querySelector( "#confirm-password-b" ).value;
             contractTerms   	= document.querySelector( "#contract-terms" ).checked;
             
             error        = false;
@@ -132,12 +132,12 @@ window.addEventListener( "load", function(){
             
             } );
             
-            advancedFunction.verifyField( "#password-b", "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%&*?()[]{}<>", function(){
-                
-                errorMessage = "Você inseriu caracteres inválidos, insira uma nova senha B.";
-                error        = true;
-        
-            } );
+//            advancedFunction.verifyField( "#password-b", "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%&*?()[]{}<>", function(){
+//                
+//                errorMessage = "Você inseriu caracteres inválidos, insira uma nova senha B.";
+//                error        = true;
+//        
+//            } );
             
             advancedFunction.compareFields( "#password-a", "#confirm-password-a", function(){
             
@@ -146,12 +146,12 @@ window.addEventListener( "load", function(){
             
             } );
             
-            advancedFunction.compareFields( "#password-b", "#confirm-password-b", function(){
-                
-                errorMessage = "As senhas B são diferentes.";
-                error        = true;
-        
-            } );
+//            advancedFunction.compareFields( "#password-b", "#confirm-password-b", function(){
+//                
+//                errorMessage = "As senhas B são diferentes.";
+//                error        = true;
+//        
+//            } );
             
             if( !contractTerms ){
             
@@ -174,12 +174,12 @@ window.addEventListener( "load", function(){
             
             }
             
-            if( passwordB == "" ){
-                
-                errorMessage = "O campo 'Senha B' está vazio.";
-                error        = true;
-        
-            }
+//            if( passwordB == "" ){
+//                
+//                errorMessage = "O campo 'Senha B' está vazio.";
+//                error        = true;
+//        
+//            }
             
             if( error ){
             
@@ -192,13 +192,13 @@ window.addEventListener( "load", function(){
                                  '"name": '     + '"' + name     + '"' + "," +
                                  '"email": '    + '"' + email    + '"' + "," +
                                  '"image": '    + '"' + image    + '"' + "," +
-                                 '"password-a": ' + '"' + passwordA + '"' + "," +
-                                 '"password-b": ' + '"' + passwordB + '"' +
+                                 '"password-a": ' + '"' + passwordA + '"' + //"," +
+                                 //'"password-b": ' + '"' + passwordB + '"' +
                          "}";
                          
             advancedFunction.sendJson( destiny, jsonToSend, function( jsonObject ){
             
-                if( jsonObject.status == "200" ) window.location = "signin.html";
+                if( jsonObject.status == "200" ) window.location = "index.html";//window.location = "signinB.html";
                 else alert( "Houve um problema, tente novamente." );
             
             } );

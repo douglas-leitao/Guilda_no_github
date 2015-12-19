@@ -10,16 +10,18 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.json.JSONObject;
 
 import br.com.freelancer.model.TarefaBean;
+import br.com.freelancer.model.UsuarioBean;
 import br.com.freelancer.operation.ListTarefaOp;
 
 @WebServlet("/MuralServlet")
 public class MuralServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	private Integer status;
 	private List<TarefaBean> listaJob;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -27,6 +29,18 @@ public class MuralServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession sessao = request.getSession(true);
+		UsuarioBean logado = (UsuarioBean)sessao.getAttribute("resLogado");
+		
+		if(logado == null){
+			System.out.println("SEM SESSAO");
+			this.status = 403;
+			System.out.println("Status: " + status);			
+		}else{
+			System.out.println("SESSAO CRIADA!");
+			this.status = 200;
+		}
+		
 		StringBuilder recebido = new StringBuilder( 500 );
 		ServletInputStream sir = request.getInputStream();
 		
@@ -67,6 +81,7 @@ public class MuralServlet extends HttpServlet {
 	        out.println("\"data_cadastro\": \""+ item.getData_cadastro() +"\",");
 	        out.println("\"preco\": \""+ item.getPreco() +"\",");
 	        out.println("\"nroPag\": \""+ nroPag +"\",");
+	        out.println("\"status\": \""+ status +"\",");
 	        out.println("\"desc\": \""+ item.getDesc_tarefa() + "\"");
 	        
 	        if(listaJob.size()!=i){
@@ -77,7 +92,7 @@ public class MuralServlet extends HttpServlet {
 	        
 	        i++;
 		}
-	
+		
 		out.println("}");
 		out.close();
 	

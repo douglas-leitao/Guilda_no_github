@@ -58,7 +58,7 @@ public class NewjobServlet extends HttpServlet {
 			
 			NewjobOp cadastro = new NewjobOp();
 			try {
-				this.status = cadastro.CadastrarTarefa(jObj, logado.getId_usuario());
+				this.status = cadastro.cadastrarTarefa(jObj, logado.getId_usuario());
 			} catch (NoSuchAlgorithmException e1) {
 				e1.printStackTrace();
 				this.status = 404;

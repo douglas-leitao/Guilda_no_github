@@ -25,7 +25,7 @@ public class UsuarioBean {
 	private String email_usuario;
 	@Login
 	private String senha_a;
-	private String senha_b;
+//	private String senha_b;
 	@Login
 	@Default
 	@Boolean
@@ -55,12 +55,12 @@ public class UsuarioBean {
 	public void setSenha_a(String senha_a) {
 		this.senha_a = senha_a;
 	}
-	public String getSenha_b() {
-		return senha_b;
-	}
-	public void setSenha_b(String senha_b) {
-		this.senha_b = senha_b;
-	}
+//	public String getSenha_b() {
+//		return senha_b;
+//	}
+//	public void setSenha_b(String senha_b) {
+//		this.senha_b = senha_b;
+//	}
 	
 	public boolean isAtivo() {
 		return ativo;

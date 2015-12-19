@@ -19,10 +19,10 @@ public class NewjobOp {
 	TarefaBean job = new TarefaBean();
 	Date dt_entrega;
 	Date dt_cadastro;
-	Integer extimativa;
+	Integer estimativa;
 	double preco;
 	
-	public int CadastrarTarefa(JSONObject jObj, Integer id_user) throws NoSuchAlgorithmException, UnsupportedEncodingException{
+	public int cadastrarTarefa(JSONObject jObj, Integer id_user) throws NoSuchAlgorithmException, UnsupportedEncodingException{
 		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
 		Date dataAtual = new Date(new java.util.Date().getTime());
 		
@@ -41,10 +41,10 @@ public class NewjobOp {
 		}
 		
 		
-		if(jObj.get("extimativa").toString().equals("")){
-			extimativa = 0;
+		if(jObj.get("estimativa").toString().equals("")){
+			estimativa = 0;
 		}else{
-			extimativa = Integer.parseInt(jObj.get("extimativa").toString());
+			estimativa = Integer.parseInt(jObj.get("estimativa").toString());
 		}
 		if(jObj.get("preco").toString().equals("")){
 			preco = 0;
@@ -58,7 +58,7 @@ public class NewjobOp {
 		job.setRequisitos(requisitos);
 		job.setData_entrega(dt_entrega);
 		job.setData_cadastro(dt_cadastro);
-		job.setExtimativa_hora(extimativa);
+		job.setEstimativa_hora(estimativa);
 		job.setPreco(preco);
 		job.setId_tipo_tarefa(id_tipo_tarefa);
 		job.setId_status_tarefa(1);

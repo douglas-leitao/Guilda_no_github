@@ -30,7 +30,7 @@ public class SignupOp {
 		String email = jObj.get("email").toString();
 		//String image = jObj.get("image").toString();
 		String password_a = jObj.get("password-a").toString();
-		String password_b = jObj.get("password-b").toString();
+		//String password_b = jObj.get("password-b").toString();
 		
 		//validate informations
 		//
@@ -44,21 +44,21 @@ public class SignupOp {
 		} 
 		String passwordCript_a = hexString_a.toString();
 		
-		MessageDigest algorithm_b = MessageDigest.getInstance("SHA-256"); 
-		byte messageDigest_b[] = algorithm_b.digest(password_b.getBytes("UTF-8"));
-		StringBuilder hexString_b = new StringBuilder(); 
-		
-		for (byte c : messageDigest_b) { 
-			hexString_b.append(String.format("%02X", 0xFF & c)); 
-		} 
-		String passwordCript_b = hexString_b.toString();
-		
+//		MessageDigest algorithm_b = MessageDigest.getInstance("SHA-256"); 
+//		//byte messageDigest_b[] = algorithm_b.digest(password_b.getBytes("UTF-8"));
+//		StringBuilder hexString_b = new StringBuilder(); 
+//		
+//		for (byte c : messageDigest_b) { 
+//			hexString_b.append(String.format("%02X", 0xFF & c)); 
+//		} 
+//		String passwordCript_b = hexString_b.toString();
+//		
 	
 		
 		user.setNome_usuario(name);
 		user.setEmail_usuario(email);
 		user.setSenha_a(passwordCript_a);
-		user.setSenha_b(passwordCript_b);
+		//user.setSenha_b(passwordCript_b);
 		
 		//user.setImagem(image);
 

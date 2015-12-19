@@ -20,7 +20,7 @@ window.addEventListener( "load", function(){
 
                 advancedFunction.sendJson( destiny, jsonToSend, function( jsonObject ){
                 
-                        if( jsonObject.status == "200" ) window.location = "signinB.html";
+                        if( jsonObject.status == "200" ) window.location = "index.html";
                         else alert( "Houve um problema, tente novamente." );
                 
                 } );

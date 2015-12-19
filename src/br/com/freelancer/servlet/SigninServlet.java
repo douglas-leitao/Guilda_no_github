@@ -21,7 +21,7 @@ import br.com.freelancer.operation.SigninOp;
 @WebServlet("/SigninServlet")
 public class SigninServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private Integer Status;
+	private Integer status;
 	UsuarioBean user;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -47,29 +47,29 @@ public class SigninServlet extends HttpServlet {
 		
 		SigninOp login = new SigninOp();
 		try {
-			this.Status = login.autenticaLogin(jObj);
+			this.status = login.autenticaLogin(jObj);
 		} catch (NoSuchAlgorithmException e) {
 			System.out.println("Nao foi possivel criptografar a senha!");
-			this.Status = 404;
+			this.status = 404;
 			e.printStackTrace();
 		} catch (ConnectionDBException e) {
 			System.out.println("Nao foi possivel conectar ao banco de dados!");
-			this.Status = 404;
+			this.status = 404;
 			e.printStackTrace();
 		}
 		
-		if(Status.equals(200)){
+		if(status.equals(200)){
 			this.user = login.carregaUsuario();
-			//login.onlineTrue();			
-			HttpSession sessao = request.getSession(); // Aqui estou querendo criar uma nova sessão!
-			sessao.setAttribute("resLogado", this.user); // aqui eu passo o objeto UsuarioBean para a sessão!
+			
+			HttpSession sessao = request.getSession(); 
+			sessao.setAttribute("resLogado", this.user);
 			
 			System.out.println("SESSAO CRIADA");
 			System.out.println(user.getNome_usuario()+" está Online!");
 		}
 		
 		JSONObject result = new JSONObject();
-		result.put("status", this.Status);
+		result.put("status", this.status);
 		
 		     
 		PrintWriter out = response.getWriter();

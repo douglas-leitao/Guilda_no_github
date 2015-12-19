@@ -16,6 +16,7 @@ window.addEventListener( "load", function(){
         var url;
         var where = 0;
         var urlmural = "mural.html";
+        var status;
         
         var jsonToSend;
         
@@ -27,14 +28,10 @@ window.addEventListener( "load", function(){
         //destinyReceive = "json/mural.json";
         destinyReceive = "http://localhost:8080/ProjGuilda/MuralServlet";
        
-        destinyFilter = "http://localhost:8080/ProjGuilda/TipoTarefaServlet";
-        
+        destinyFilter = "http://localhost:8080/ProjGuilda/TipoTarefaServlet";        
         
         date = new Date();
-        
-        
-        
-        
+
         document.querySelector( "#tipo-job" ).onchange = function(){
         	where	= document.querySelector( "#tipo-job" ).value;
         	//alert("where: "+ where);
@@ -115,7 +112,6 @@ window.addEventListener( "load", function(){
                 describe           			= document.createElement( "span" );
                 describe.id      			= json[ i ].id + "-describe";
                 
-                
                 desc           				= document.createElement( "span" );
                 desc.innerHTML 				= json[ i ].desc;
                 desc.id       				= json[ i ].id + "-desc";
@@ -131,10 +127,12 @@ window.addEventListener( "load", function(){
                 dataEntrega.id        		= json[ i ].id + "-data-entrega";
                 dataEntrega.className 		= "br";
                 
-                link       			= document.createElement( "a" );
-                link.href  			= "jobDetail.html?id=" + json[ i ].id + "/";
+                status						= json[ i ].status;
                 
-                
+                link       					= document.createElement( "a" );
+                link.id						= json[i].id;
+                link.onclick 				= function(){ validaLogin( this.id ) };            
+	            
                 element.appendChild( image );
                 element.appendChild( describe );
                 
@@ -143,15 +141,21 @@ window.addEventListener( "load", function(){
                 describe.appendChild( dataEntrega );
                 
                 
-                
                 link.appendChild( element );
                 
-    			//if(nroRegPag > aux) document.querySelector( "#output" ).appendChild( link );
-    			//aux++;
     			document.querySelector( "#output" ).appendChild( link );
 
     		}
     		
+    		function validaLogin(id) {
+            	if(status == 200){
+	            	window.location = "jobDetail.html?id=" + id + "/";
+                }else if(status == 403){
+                	alert("Necessário fazer Login para acessar a JOB!");
+                }else{
+                	alert("Erro no Sistema, contate o desenvolvedor");
+                }
+            }
     		
     		if(offset > 1){
     			var anterior = offset - 1;

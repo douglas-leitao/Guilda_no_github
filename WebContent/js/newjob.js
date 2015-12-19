@@ -7,7 +7,7 @@ window.addEventListener( "load", function(){
         var requisitos;
         var dataEntrega;
         var dataCadastro;
-        var extimativa;
+        var estimativa;
         var preco;
         var date;      
         
@@ -44,7 +44,7 @@ window.addEventListener( "load", function(){
         	descTarefa		= document.querySelector( "#desc-tarefa" ).value;
         	requisitos      = document.querySelector( "#requisitos" ).value;
         	dataEntrega     = document.querySelector( "#data-entrega" ).value;
-        	extimativa 		= document.querySelector( "#extimativa" ).value;
+        	estimativa 		= document.querySelector( "#estimativa" ).value;
         	preco       	= document.querySelector( "#preco" ).value;
         	descTipoTarefa	= document.querySelector( "#tipo-job" ).value;
                            
@@ -90,7 +90,7 @@ window.addEventListener( "load", function(){
                                  '"requisitos": '    	+ '"' + 	requisitos  	+ '"' + "," +
                                  '"data-entrega": '  	+ '"' + 	dataEntrega 	+ '"' + "," +
                                  '"data-cadastro": '  	+ '"' + 	dataCadastro 	+ '"' + "," +
-                                 '"extimativa": ' 		+ '"' + 	extimativa 		+ '"' + "," +
+                                 '"estimativa": ' 		+ '"' + 	estimativa 		+ '"' + "," +
                                  '"tipo-job": ' 		+ '"' + 	descTipoTarefa 	+ '"' + "," +
                                  '"preco": ' 			+ '"' + 	preco 			+ '"' +
                          "}";
