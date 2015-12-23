@@ -12,7 +12,7 @@ import br.com.freelancer.util.PrimaryKey;
 import br.com.freelancer.util.Table;
 import br.com.freelancer.util.View;
 
-
+//@Table(tableName="TAREFATESTE")
 @Table(tableName="TAREFA")
 @View(viewName="VWTAREFA")
 public class TarefaBean {

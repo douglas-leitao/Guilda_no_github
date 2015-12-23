@@ -104,28 +104,74 @@ window.addEventListener( "load", function(){
     			element.id 					= json[ i ].id;
     			element.className 			= "col-md-3 portfolio-item";
     			
-    			image           			= document.createElement( "img" );
-                image.src       			= json[ i ].image;
-                image.id        			= json[ i ].id + "-image";
-                image.className 			= "img-responsive";
+    			idTipoTarefa 				= json[ i ].idTipoJob;
+    			//alert(idTipoTarefa);
+    			
+    			job_image	           			= document.createElement( "div" );
+    			job_image.id 	     			= "job_image";
                 
-                describe           			= document.createElement( "span" );
-                describe.id      			= json[ i ].id + "-describe";
+    			image           			= document.createElement( "img" );
+    			if(idTipoTarefa == 1){
+    				image.src       			= "img/tipo_tarefa/backend.png";
+    			}else if(idTipoTarefa == 2){
+    				image.src       			= "img/tipo_tarefa/frontend.png";
+    			}else if(idTipoTarefa == 3){
+    				image.src       			= "img/tipo_tarefa/Banco_de_dados.png";
+    			}else if(idTipoTarefa == 4){
+    				image.src       			= "img/tipo_tarefa/design.png";
+    			}else if(idTipoTarefa == 5){
+    				image.src       			= "img/tipo_tarefa/mobile2.png";
+    			}else if(idTipoTarefa == 6){
+    				image.src       			= "img/tipo_tarefa/java.png";
+    			}else if(idTipoTarefa == 7){
+    				image.src       			= "img/tipo_tarefa/c#1.jpg";
+    			}else if(idTipoTarefa == 8){
+    				image.src       			= "img/tipo_tarefa/php.png";
+    			}else if(idTipoTarefa == 9){
+    				image.src       			= "img/tipo_tarefa/javascript.png";
+    			}else if(idTipoTarefa == 10){
+    				image.src       			= "img/tipo_tarefa/teste.jpg";
+    			}
+    			
+                image.id 		       			= json[ i ].id + "-image";
+                image.className 				= "img-responsive";
+                
+                describe	           			= document.createElement( "div" );
+                describe.id 	     			= "describe";
+                describe.className 				= "black describe";
+                
+                desc_li						= document.createElement( "li" );
+                
+                desc_label     				= document.createElement( "label" );
+                desc_label.innerHTML 		= "Descrição: ";
+                desc_label.className 		= "bold";
                 
                 desc           				= document.createElement( "span" );
                 desc.innerHTML 				= json[ i ].desc;
                 desc.id       				= json[ i ].id + "-desc";
-                desc.className 				= "br";
+                desc.className 				= "left_margin";
+                
+                preco_li					= document.createElement( "li" );
+                
+                preco_label     			= document.createElement( "label" );
+                preco_label.innerHTML 		= "Preço: ";
+                preco_label.className 		= "bold";
                 
                 preco           			= document.createElement( "span" );
                 preco.innerHTML 			= json[ i ].preco;
                 preco.id        			= json[ i ].id + "-preco";
-                preco.className 			= "br";
+                preco.className 			= "left_margin";
+                
+                dataEntrega_li				= document.createElement( "li" );
+                
+                dataEntrega_label     		= document.createElement( "label" );
+                dataEntrega_label.innerHTML = "Data de entrega: ";
+                dataEntrega_label.className = "bold";
                 
                 dataEntrega           		= document.createElement( "span" );
                 dataEntrega.innerHTML 		= json[ i ].data_entrega;
                 dataEntrega.id        		= json[ i ].id + "-data-entrega";
-                dataEntrega.className 		= "br";
+                dataEntrega.className 		= "left_margin";
                 
                 status						= json[ i ].status;
                 
@@ -133,13 +179,25 @@ window.addEventListener( "load", function(){
                 link.id						= json[i].id;
                 link.onclick 				= function(){ validaLogin( this.id ) };            
 	            
-                element.appendChild( image );
+               
+                
+                desc_li.appendChild( desc_label );
+                desc_li.appendChild( desc );
+                
+                preco_li.appendChild( preco_label );
+                preco_li.appendChild( preco );
+                
+                dataEntrega_li.appendChild( dataEntrega_label );
+                dataEntrega_li.appendChild( dataEntrega );
+                
+                describe.appendChild( desc_li );
+                describe.appendChild( preco_li );
+                describe.appendChild( dataEntrega_li );
+                
+                job_image.appendChild( image );
+                
+                element.appendChild( job_image );
                 element.appendChild( describe );
-                
-                describe.appendChild( desc );
-                describe.appendChild( preco );
-                describe.appendChild( dataEntrega );
-                
                 
                 link.appendChild( element );
                 

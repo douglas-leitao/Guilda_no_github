@@ -42,7 +42,7 @@ window.addEventListener( "load", function(){
         document.querySelector( "#submit" ).onclick = function(){
                 
         	descTarefa		= document.querySelector( "#desc-tarefa" ).value;
-        	requisitos      = document.querySelector( "#requisitos" ).value;
+        	requisitos      = document.querySelector( "#requisitos" ).value.replace(/\n/g, " ");;
         	dataEntrega     = document.querySelector( "#data-entrega" ).value;
         	estimativa 		= document.querySelector( "#estimativa" ).value;
         	preco       	= document.querySelector( "#preco" ).value;
